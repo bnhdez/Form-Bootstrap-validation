@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Producto</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <style>
+        form{
+            border: 2px solid #ccc;
+            padding: 3%;
+            margin: 7%;
+            margin-top: 3%;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container text-center">
+        <h1 class="display-5">Registro de Productos</h1>
+    </div>
+    <div class="container justify-content-center align-items-center" id="caja">
+        <form action="guardado.html" novalidate class="needs-validation">
+            <div class="col-12">
+                <label class="form-label" for="validationCustom01">Código:</label>
+                <input class="form-control" type="text" id="codigo" required>
+                <div class="valid-feedback">Valido</div>
+                <div class="invalid-feedback">Llenar el campo</div>
+            </div>
+            <div class="col-12">
+                <label class="form-label" for="validationTextarea">Descripción:</label>
+                <textarea class="form-control" required placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px"></textarea>
+                <div class="invalid-feedback">Llenar el campo</div>
+            </div>
+            <div class="col-12">
+                <label class="form-label" for="validationCustom03">Código de barra:</label>
+                <input class="form-control" type="text" inputmode="numeric" id="codigobarra" required>
+                <div class="valid-feedback">Valido</div>
+                <div class="invalid-feedback">Llenar el campo</div>
+            </div>
+            <div class="col-12">
+                <label class="form-label" for="precio">Precio unitario:</label>
+                <input class="form-control" type="text" inputmode="numeric" id="precio" required>
+                <div class="valid-feedback">Valido</div>
+                <div class="invalid-feedback">Llenar el campo</div>
+            </div>
+            <div>
+                <label class="form-label" for="stock">Stock:</label>
+                <input class="form-control"  type="text" inputmode="numeric" id="stock" required>
+                <div class="valid-feedback">Valido</div>
+                <div class="invalid-feedback">Llenar el campo</div>
+            </div>
+            <div class="col-12">
+                <label class="form-label" for="proveedor">Proveedor:</label>
+                <input class="form-control" type="text" id="proveedor" required>
+                <div class="valid-feedback">Valido</div>
+                <div class="invalid-feedback">Llenar el campo</div> 
+            </div>
+            <div>
+                <label class="form-label" for="estado">Estado:</label>
+                <input class="form-check-input" type="checkbox" id="gridCheck" required>
+                <label class="form-check-label" for="gridCheck">Activo</label>
+                <div class="invalid-feedback">Marcar el estado</div>
+            </div>
+            <div class="col-12 mb-4">
+                <label class="form-label" for="categoria">Categoría:</label>
+                <select class="form-select" name="categorias" id="categoria" required>
+                    <option selected disabled value="">Escoge...</option>
+                    <option value="0">Categoría 1</option>
+                    <option value="1">Categoría 2</option>
+                    <option value="2">Categoría 3</option>
+                    <option value="3">Categoría 4</option>
+                </select>
+            </div>
+            <div class="d-flex justify-content-between">
+                <button type="submit" class="btn btn-success">Guardar</button>
+                <button type="button" class="btn btn-secondary">Cancelar</button>
+            </div>
+        </form>
+    </div>
+
+    <!-- SCRIPT -->
+    <script>
+        // Example starter JavaScript for disabling form submissions if there are invalid fields
+        (function () {
+            'use strict'
+        
+          // Fetch all the forms we want to apply custom Bootstrap validation styles to
+            var forms = document.querySelectorAll('.needs-validation')
+        
+          // Loop over them and prevent submission
+            Array.prototype.slice.call(forms)
+            .forEach(function (form) {
+                form.addEventListener('submit', function (event) {
+                if (!form.checkValidity()) {
+                    event.preventDefault()
+                    event.stopPropagation()                    
+                }else{
+                    alert("Datos Guardados exitosamente!")
+                }
+                form.classList.add('was-validated')
+                }, false)
+            })
+        })()
+    </script>
+</body>
+</html>
